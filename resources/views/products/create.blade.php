@@ -80,9 +80,11 @@
             </div>
 
             <div class="card-body">
-                <input type="text" name="sizes[]" class="form-control mb-2" placeholder="مثال: 250ml">
-                <input type="text" name="sizes[]" class="form-control mb-2" placeholder="مثال: 500ml">
-                <input type="text" name="sizes[]" class="form-control mb-2" placeholder="مثال: 1L">
+                {{-- أول حقل --}}
+                <input type="text" name="sizes[]" class="form-control mb-2" placeholder="أدخل حجم العبوة">
+
+                {{-- حقل إضافي --}}
+                <input type="text" name="sizes[]" class="form-control mb-2" placeholder="إضافة حجم جديد">
             </div>
         </div>
 

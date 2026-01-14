@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SeoSettingController;
 use App\Models\Blog;
 use App\Models\Category;
 
@@ -25,6 +26,8 @@ Route::middleware('auth')->group(function () {
     Route::get('categories/{id}/products', [CategoryController::class, 'products'])->name('categories.products');
     Route::resource('categories', CategoryController::class);
     Route::resource('products', ProductController::class);
+    Route::get('/admin/seo', [SeoSettingController::class, 'edit'])->name('seo.edit');
+    Route::post('/admin/seo', [SeoSettingController::class, 'update'])->name('seo.update');
 });
 
 // من نحن

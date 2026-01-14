@@ -326,6 +326,12 @@ return [
             'url'  => '/products',
             'icon' => 'fas fa-list',
         ],
+        [
+            'text' => 'إعدادات SEO',
+            'url'  => '/admin/seo',
+            'icon' => 'fas fa-seo',
+        ],
+
     ],
 
     /*

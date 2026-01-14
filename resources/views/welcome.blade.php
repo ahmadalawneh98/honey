@@ -3,22 +3,64 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures proper rendering in IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Bee & Honey - Natural Honey Products</title>
+    <meta name="description"
+        content="Bee & Honey offers the finest natural honey from our farm. Explore our honey products, e-catalog, and branch locations.">
+    <meta name="keywords" content="Bee & Honey, honey products, natural honey, Yemeni Honey, e-catalog, honey farm">
+    <meta name="author" content="Bee & Honey">
+    <meta name="robots" content="index, follow">
+    @php
+        $seo = \App\Models\SeoSetting::first();
+    @endphp
+
+    {!! $seo->meta ?? '' !!}
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bee & Honey - Natural Honey Products">
+    <meta property="og:description"
+        content="Explore the finest natural honey from Bee & Honey. Shop honey products and learn more about our farm.">
+    <meta property="og:url" content="https://www.yourwebsite.com/">
+    <meta property="og:image" content="https://www.yourwebsite.com/assets/og-image.jpg">
+    <meta property="og:site_name" content="Bee & Honey">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bee & Honey - Natural Honey Products">
+    <meta name="twitter:description"
+        content="Explore the finest natural honey from Bee & Honey. Shop honey products and learn more about our farm.">
+    <meta name="twitter:image" content="https://www.yourwebsite.com/assets/og-image.jpg">
+    <meta name="twitter:site" content="@BeeAndHoney">
+    <meta name="twitter:creator" content="@BeeAndHoney">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/logo.png">
+    <link rel="mask-icon" href="assets/logo.png" color="#ffc107">
+    <meta name="msapplication-TileColor" content="#ffc107">
+    <meta name="theme-color" content="#ffffff">
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
     <link rel="stylesheet" href="css/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/png" href="{{ asset('assets/logo.png') }}">
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <title>Document</title>
 </head>
+
 
 <body class="home-body">
 
@@ -28,54 +70,8 @@
                 <source src="assets/header.mp4" type="video/mp4">
             </video>
         </div>
-        <nav class="navbar navbar-expand-lg" id="mainNavbar">
-            <div class="container-lg ">
-                <a class="navbar-brand" href="/">
-                    <div class="logo-icon">
-                        <img src="assets/logo.png" height="70" class="w-100 dark-logo">
-                        <img src="assets/light-logo.png" height="70" class="w-100 light-logo">
-                    </div>
-                </a>
+        @include('layouts.header')
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <i class="fas fa-bars"></i>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mx-auto gap-3 text-center">
-                        <li class="nav-item"><a class="nav-link" href="/" data-en="Home" data-ar="الرئيسية"
-                                data-es="Inicio" data-fr="Accueil">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}" data-en="About Us"
-                                data-ar="من نحن" data-es="Sobre Nosotros" data-fr="À propos">About Us</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('categories') }}" data-en="Products"
-                                data-ar="المنتجات" data-es="Productos" data-fr="Produits">Products</a>
-                        </li>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#" data-en="Partners" data-ar="شركاؤنا"
-                                data-es="Socios" data-fr="Partenaires">Partners</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('news') }}" data-en="News"
-                                data-ar="الأخبار" data-es="Noticias" data-fr="Actualités">News</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}" data-en="Contact Us"
-                                data-ar="تواصل معنا" data-es="Contáctanos" data-fr="Contactez-nous">Contact
-                                Us</a></li>
-                    </ul>
-                    <div class="dropdown p-4 p-lg-0 d-flex justify-content-center align-items-center">
-                        <button class="btn btn-warning dropdown-toggle" type="button" id="languageDropdown"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Language
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="#" data-lang="en">English</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="ar">Arabic</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="es">Spanish</a></li>
-                            <li><a class="dropdown-item" href="#" data-lang="fr">French</a></li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </nav>
         <div class="hero-inner py-5">
             <div class="rotating-text-wrapper mb-4">
                 <h2 class="t1">the best quality Honey from our farm</h2>
@@ -88,8 +84,7 @@
             </div>
             <div class="hero-btns">
                 <a href="#brief" class="btn btn-warning">
-                    <span data-en="Explore More" data-ar="اكتشف المزيد" data-es="Explorar más"
-                        data-fr="Explorer plus">
+                    <span data-en="Explore More" data-ar="اكتشف المزيد" data-es="Explorar más" data-fr="Explorer plus">
                         Explore More
                     </span>
                     <span class="arrow-circle"><i class="fas fa-arrow-down"></i></span>
@@ -182,9 +177,10 @@
             </div>
             <div class="row g-4 align-items-center mt-4">
                 <div class="col-lg-6">
-                    <div class="map-wrapper">
-                        <div id="map"></div>
+                    <div class="map-container">
+                        <div id="chartdiv"></div>
                     </div>
+
                 </div>
                 <div class="col-lg-6">
                     <div class="branches px-2">
@@ -260,7 +256,6 @@
                                         <h3 data-en="Qatar" data-ar="قطر" data-fr="Qatar" data-es="Catar">
                                             Qatar
                                         </h3>
-
                                     </div>
                                     <div class="desc">
                                         <p class="text-muted"
@@ -274,6 +269,7 @@
                                         </p>
                                     </div>
                                 </div>
+
                             </div>
                             <div class="col-sm-6 col-md-4 col-lg-6">
                                 <div class="branch-box shadow-sm">
@@ -281,7 +277,6 @@
                                         <h3 data-en="Oman" data-ar="عُمان" data-fr="Oman" data-es="Omán">
                                             Oman
                                         </h3>
-
                                     </div>
                                     <div class="desc">
                                         <p class="text-muted"
@@ -297,7 +292,7 @@
                                 </div>
                             </div>
                             <div class="col-sm-6 col-md-4 col-lg-6">
-                                <div class="branch-box shadow-sm">
+                                <div class="branch-box shadow-sm ">
                                     <div class="title">
                                         <h3 data-en="The UAE" data-ar="الإمارات العربية المتحدة"
                                             data-fr="Les Émirats arabes unis" data-es="Los Emiratos Árabes Unidos">
@@ -340,11 +335,12 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
     </section>
@@ -356,8 +352,8 @@
                 data-es="Nuestros certificados" data-fr="Nos certificats">
                 Our Certificates
             </h2>
-            <div class="row g-4 mt-5">
-                <div class="col-md-2 col-lg-4">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 mt-5">
+                <div class="col">
                     <div class="certificate-item" data-aos="zoom-in">
                         <div class="image mx-auto">
                             <img src="assets/certificate-icon-1.png" class="img-fluid certificate-img"
@@ -371,7 +367,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 col-lg-4">
+                <div class="col">
                     <div class="certificate-item" data-aos="zoom-in">
                         <div class="image mx-auto">
                             <img src="assets/certificate-icon-2.png" class="img-fluid certificate-img"
@@ -384,7 +380,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-2 col-lg-4">
+                <div class="col">
                     <div class="certificate-item" data-aos="zoom-in">
                         <div class="image mx-auto">
                             <img src="assets/certificate-icon-3.png" class="img-fluid certificate-img"
@@ -398,7 +394,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 col-lg-4">
+                <div class="col">
                     <div class="certificate-item" data-aos="zoom-in">
                         <div class="image mx-auto">
                             <img src="assets/certificate-icon-4.png" class="img-fluid certificate-img"
@@ -412,25 +408,48 @@
                     </div>
                 </div>
 
-                <div class="col-md-2 col-lg-4">
+                <div class="col">
                     <div class="certificate-item" data-aos="zoom-in">
                         <div class="image mx-auto">
                             <img src="assets/certificate-icon-5.png" class="img-fluid certificate-img"
                                 alt="Certificate" data-bs-toggle="modal" data-bs-target="#certificateModal"
-                                data-bs-imgs="assets/certificate-5.jpg">
+                                data-bs-imgs="assets/certificate-5.png">
                             <div class="view-icon" data-bs-toggle="modal" data-bs-target="#certificateModal"
-                                data-bs-img="assets/certificate-5.jpg">
+                                data-bs-img="assets/certificate-5.png">
                                 <i class="fa-regular fa-hand-pointer"></i>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
         </div>
     </section>
 
+    <section class="catalog-section py-5 mb-5">
+        <div class="container">
+            <div class="row g-4 align-items-center justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <div class="catalog-content">
+                        <p class="catalog-text" data-en="To view the e-catalog" data-ar="لعرض الكتالوج الإلكتروني"
+                            data-fr="Voir le catalogue électronique" data-es="Ver el catálogo electrónico">
+                            To view the e-catalog
+                        </p>
+
+                        <a href="https://drive.google.com/file/d/12xIn_DojVCMRybqoXVzUXuBXNC4IvR5U/view?usp=sharing"
+                            target="_blank" download class="catalog-btn">
+                            <i class="fa-solid fa-file-arrow-down fa-bounce"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="catalog-image">
+                        <img src="assets/catalog.png" alt="E-Catalog" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="py-5 counters" id="honeyCounters">
         <div class="container">
@@ -479,7 +498,7 @@
                     <div class="counter-box text-center">
                         <div class="bg"></div>
                         <div class="icon"><i class="fa-solid fa-store"></i></div>
-                        <div class="number" data-target="8">0</div>
+                        <div class="number" data-target="7000">0</div>
                         <div class="title" data-ar="مواقع البيع" data-en="Sales Websites" data-es="Sitios de venta"
                             data-fr="Sites de vente">
                             Sales Websites
@@ -492,141 +511,8 @@
 
         </div>
     </section>
-    <section class="catalog-section py-5">
-        <div class="container">
-            <div class="row g-4 align-items-center justify-content-center">
-                <div class="col-lg-6 text-center">
-                    <div class="catalog-content">
-                        <p class="catalog-text" data-en="To view the e-catalog" data-ar="لعرض الكتالوج الإلكتروني"
-                            data-fr="Voir le catalogue électronique" data-es="Ver el catálogo electrónico">
-                            To view the e-catalog
-                        </p>
 
-                        <a href="{{ asset('pdf/Final bee&honey bilangual catalog .pdf') }}" target="_blank" download
-                            class="catalog-btn">
-                            <i class="fa-solid fa-file-arrow-down fa-bounce"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="catalog-image">
-                        <img src="assets/catalog.png" alt="E-Catalog" class="img-fluid">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer-section">
-        <div class="container py-5">
-            <div class="row g-4 align-items-stretch">
-                <div class="col-lg-4 col-md-6 d-flex align-items-center">
-                    <div class="footer-logo d-flex align-items-center gap-0">
-                        <img src="assets/logo.png" alt="ee and honey" height="100">
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="footer-title" data-en="Links" data-ar="روابط" data-es="Enlaces" data-fr="Liens">
-                        Links
-                    </h5>
-
-                    <ul class="footer-links">
-                        <li>
-                            <a href="/" data-en="Home" data-ar="الرئيسية" data-es="Inicio" data-fr="Accueil">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('about') }}" data-en="About Us" data-ar="من نحن"
-                                data-es="Sobre Nosotros" data-fr="À propos">
-                                About Us
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('categories') }}" data-en="Products" data-ar="المنتجات"
-                                data-es="Productos" data-fr="Produits">
-                                Products
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" data-en="Partner" data-ar="شركاؤنا" data-es="Socio"
-                                data-fr="Partenaire">
-                                Partner
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('news') }}" data-en="News" data-ar="الأخبار" data-es="Noticias"
-                                data-fr="Actualités">
-                                News
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('contact') }}" data-en="Contact Us" data-ar="تواصل معنا"
-                                data-es="Contáctanos" data-fr="Contactez-nous">
-                                Contact Us
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="footer-title" data-en="Products" data-ar="المنتجات" data-es="Productos"
-                        data-fr="Produits">
-                        Products
-                    </h5>
-
-                    <ul class="footer-links">
-                        <li>
-                            <a href="{{ route('categories') }}" data-en="Honey Products" data-ar="منتجات العسل"
-                                data-es="Productos de miel" data-fr="Produits de miel">
-                                Honey Products
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('categories') }}" data-en="Creamed Honey" data-ar="العسل الكريمي"
-                                data-es="Miel cremado" data-fr="Miel crémeux">
-                                Creamed Honey
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('categories') }}" data-en="Drinks" data-ar="المشروبات"
-                                data-es="Bebidas" data-fr="Boissons">
-                                Drinks
-                            </a>
-                        </li>
-                    </ul>
-
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title" data-en="Newsletter" data-ar="النشرة الإخبارية" data-es="Boletín"
-                        data-fr="Newsletter">
-                        Newsletter
-                    </h5>
-
-                    <p class="footer-text"
-                        data-en="Sign Up For Our Email List To Receive Sweet Deals, Company News And More From Bee & Honey."
-                        data-ar="اشترك في قائمتنا البريدية لتصلك عروض حلوة، وأخبار الشركة والمزيد من Bee & Honey."
-                        data-es="Suscríbete a nuestra lista de correo para recibir ofertas dulces, noticias de la empresa y más de Bee & Honey."
-                        data-fr="Inscrivez-vous à notre liste de diffusion pour recevoir des offres spéciales, des nouvelles de l'entreprise et plus de Bee & Honey.">
-                        Sign Up For Our Email List To Receive Sweet Deals, Company News And More From Bee & Honey.
-                    </p>
-
-                    <form class="newsletter-form mt-4">
-                        <input type="email" placeholder="Email Address" data-placeholder-en="Email Address"
-                            data-placeholder-ar="البريد الإلكتروني" data-placeholder-es="Correo electrónico"
-                            data-placeholder-fr="Adresse e-mail" required>
-                        <button type="submit" data-en="Submit" data-ar="إرسال" data-es="Enviar" data-fr="Envoyer">
-                            Submit
-                        </button>
-                    </form>
-
-                </div>
-            </div>
-
-        </div>
-    </footer>
+    @include('layouts.footer')
 
     <div class="modal fade" id="certificateModal" tabindex="-1">
         <div class="modal-dialog modal-lg">
@@ -667,11 +553,14 @@
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
-
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
     <script src="js/main.js"></script>
     <script src="js/certificate.js"></script>
     <script src="js/map.js"></script>
