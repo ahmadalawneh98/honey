@@ -73,17 +73,26 @@
 
         <div class="hero-inner py-5">
             <div class="rotating-text-wrapper mb-4">
-                <h2 class="t1">the best quality Honey from our farm</h2>
+                <h2 class="t1" data-en="The best quality Honey from our farm"
+                    data-ar="أفضل عسل بجودة عالية من مزرعتنا" data-es="La mejor miel de calidad de nuestra granja"
+                    data-fr="Le meilleur miel de qualité de notre ferme">
+                    The best quality Honey from our farm
+                </h2>
 
-                <h2 class="t2">second title is shown here</h2>
+                <h2 class="t2" data-en="Pure natural honey straight to your table"
+                    data-ar="عسل طبيعي نقي مباشرة إلى مائدتك" data-es="Miel natural puro directo a tu mesa"
+                    data-fr="Miel naturel pur directement sur votre table">Pure natural honey straight to your table
+                </h2>
 
-                <h2 class="t3">
-                    third title is shown here
+                <h2 class="t3" data-en="Taste the sweetness of nature" data-ar="تذوق حلاوة الطبيعة"
+                    data-es="Prueba la dulzura de la naturaleza" data-fr="Goûtez la douceur de la nature">
+                    Taste the sweetness of nature
                 </h2>
             </div>
             <div class="hero-btns">
                 <a href="#brief" class="btn btn-warning">
-                    <span data-en="Explore More" data-ar="اكتشف المزيد" data-es="Explorar más" data-fr="Explorer plus">
+                    <span data-en="Explore More" data-ar="اكتشف المزيد" data-es="Explorar más"
+                        data-fr="Explorer plus">
                         Explore More
                     </span>
                     <span class="arrow-circle"><i class="fas fa-arrow-down"></i></span>
@@ -101,7 +110,7 @@
                             data-es="Breve sobre Bee&Honey" data-fr="Bref sur Bee&Honey">
                             Brief About Bee&Honey
                         </h2>
-                       <p class="text-muted"
+                        <p class="text-muted"
                             data-ar="بي آند هني هي علامة تجارية رائدة تابعة لشركة بيت العسل اليمني، التي تأسست عام 2007، وتتمتع بخبرة واسعة في تصنيع وتطوير المنتجات الطبيعية والمكملات الغذائية المعتمدة على العسل الطبيعي، وفق أعلى معايير الجودة العالمية."
                             data-en="Bee & Honey is a leading brand under Yemeni Honey House, established in 2007, with extensive experience in manufacturing and developing natural products and honey-based dietary supplements, in accordance with the highest international quality standards."
                             data-fr="Bee & Honey est une marque leader appartenant à Yemeni Honey House, fondée en 2007, disposant d’une vaste expérience dans la fabrication et le développement de produits naturels et de compléments alimentaires à base de miel naturel, conformément aux normes internationales de qualité les plus élevées."
@@ -469,7 +478,7 @@
         </div>
     </section>
 
-     <section class="catalog-section py-5 mb-5">
+    <section class="catalog-section py-5 mb-5">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-6 text-center">
@@ -485,7 +494,7 @@
                         </a>
                     </div>
                 </div>
-            
+
             </div>
         </div>
     </section>

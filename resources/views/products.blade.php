@@ -159,9 +159,21 @@
                         <div class="col-md-6 col-lg-4">
                             <div class="product-card">
 
-                                <div class="product-img">
-                                    <img src="{{ asset('storage/' . $product->image) }}"
-                                        alt="{{ $product->title_en }}">
+                                <div class="product-img swiper myProductSwiper">
+                                    <div class="swiper-wrapper" dir="ltr">
+                                        @if (!empty($product->images))
+                                            @foreach ($product->images as $image)
+                                                <div class="swiper-slide">
+                                                    <img src="{{ asset('storage/' . $image) }}"
+                                                        alt="{{ $product->title_ar }}">
+                                                </div>
+                                            @endforeach
+                                        @else
+                                            <div class="swiper-slide">
+                                                <img src="{{ asset('assets/no-image.png') }}" alt="لا توجد صورة">
+                                            </div>
+                                        @endif
+                                    </div>
                                 </div>
 
                                 <div class="product-info">
@@ -265,7 +277,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script>
+        new Swiper(".myProductSwiper", {
+            loop: true,
+            slidesPerView: 1,
 
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false
+            },
+
+            speed: 800,
+
+            allowTouchMove: true,
+            grabCursor: true
+        });
+    </script>
 </body>
 
 </html>

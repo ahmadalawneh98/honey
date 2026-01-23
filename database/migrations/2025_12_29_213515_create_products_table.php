@@ -33,7 +33,8 @@ return new class extends Migration
             // أحجام العبوات (مثال: 250ml, 500ml, 1L)
             $table->json('sizes')->nullable();
 
-            $table->string('image')->nullable();
+            // صور المنتج
+            $table->json('images')->nullable();
 
             $table->timestamps();
         });

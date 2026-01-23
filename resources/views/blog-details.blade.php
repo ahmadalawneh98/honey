@@ -84,14 +84,12 @@
                             About Us
                         </a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('categories') }}" data-en="Products" data-ar="المنتجات"
                             data-es="Productos" data-fr="Produits">
                             Products
                         </a>
                     </li>
-
                     {{-- <li class="nav-item">
                         <a class="nav-link" href="#" data-en="Partners" data-ar="شركاؤنا" data-es="Socios"
                             data-fr="Partenaires">
@@ -125,7 +123,6 @@
                             Contact Us
                         </a>
                     </li>
-
                 </ul>
                 <div class="dropdown p-4 p-lg-0 d-flex justify-content-center align-items-center">
                     <button class="btn btn-warning dropdown-toggle" type="button" id="languageDropdown"

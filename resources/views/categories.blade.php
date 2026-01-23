@@ -163,12 +163,12 @@
                                 <div class="overlay"></div>
 
                                 <div class="content">
-                                    <span data-en="{{ $category->name_en ?? '' }}"
+                                    {{-- <span data-en="{{ $category->name_en ?? '' }}"
                                         data-ar="{{ $category->name_ar ?? '' }}"
                                         data-es="{{ $category->name_es ?? '' }}"
                                         data-fr="{{ $category->name_fr ?? '' }}">
                                         {{ $category->name_en ?? '' }}
-                                    </span>
+                                    </span> --}}
 
                                     <h3 data-en="{{ $category->name_en }}" data-ar="{{ $category->name_ar }}"
                                         data-es="{{ $category->name_es }}" data-fr="{{ $category->name_fr }}">

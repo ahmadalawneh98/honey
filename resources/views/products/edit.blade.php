@@ -34,18 +34,33 @@
             </select>
         </div>
 
-        {{-- صورة المنتج --}}
-        <div class="form-group">
-            <label>صورة المنتج</label>
+        {{-- صور المنتج الحالية --}}
+        @if (!empty($product->images))
+            <div class="form-group">
+                <label>الصور الحالية</label>
+                <div class="row">
+                    @foreach ($product->images as $image)
+                        <div class="col-md-3 text-center mb-3">
+                            <img src="{{ asset('storage/' . $image) }}" class="img-fluid rounded mb-1">
 
-            @if ($product->image)
-                <div class="mb-2">
-                    <img src="{{ asset('storage/' . $product->image) }}" class="img-thumbnail" width="150">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="remove_images[]"
+                                    value="{{ $image }}" id="remove_{{ md5($image) }}">
+                                <label class="form-check-label text-danger" for="remove_{{ md5($image) }}">
+                                    حذف
+                                </label>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-            @endif
+            </div>
+        @endif
 
-            <input type="file" name="image" class="form-control">
-            <small class="text-muted">اترك الحقل فارغًا إذا لا تريد تغيير الصورة</small>
+        {{-- إضافة صور جديدة --}}
+        <div class="form-group">
+            <label>إضافة صور جديدة</label>
+            <input type="file" name="images[]" class="form-control" multiple>
+            <small class="text-muted">يمكنك اختيار أكثر من صورة</small>
         </div>
 
         <hr>

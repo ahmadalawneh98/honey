@@ -27,17 +27,18 @@
             <select name="category_id" class="form-control" required>
                 <option value="">اختر التصنيف</option>
                 @foreach ($categories as $category)
-                    <option value="{{ $category->id }}">
+                    <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
                         {{ $category->name_ar }}
                     </option>
                 @endforeach
             </select>
         </div>
 
-        {{-- صورة المنتج --}}
+        {{-- صور المنتج --}}
         <div class="form-group">
-            <label>صورة المنتج</label>
-            <input type="file" name="image" class="form-control">
+            <label>صور المنتج</label>
+            <input type="file" name="images[]" class="form-control" multiple>
+            <small class="text-muted">يمكنك اختيار أكثر من صورة</small>
         </div>
 
         <hr>
@@ -80,10 +81,7 @@
             </div>
 
             <div class="card-body">
-                {{-- أول حقل --}}
                 <input type="text" name="sizes[]" class="form-control mb-2" placeholder="أدخل حجم العبوة">
-
-                {{-- حقل إضافي --}}
                 <input type="text" name="sizes[]" class="form-control mb-2" placeholder="إضافة حجم جديد">
             </div>
         </div>

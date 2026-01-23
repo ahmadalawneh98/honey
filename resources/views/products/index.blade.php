@@ -7,7 +7,10 @@
 @stop
 
 @section('content')
-    <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">إضافة منتج</a>
+    <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">
+        إضافة منتج
+    </a>
+
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -18,38 +21,45 @@
                 <th>الإجراءات</th>
             </tr>
         </thead>
+
         <tbody>
             @foreach ($products as $product)
                 <tr>
                     <td>{{ $loop->iteration }}</td>
+
                     <td>{{ $product->title_ar }}</td>
 
-                    {{-- صورة المنتج --}}
+                    {{-- صورة المنتج (أول صورة فقط) --}}
                     <td>
-                        @if ($product->image)
-                            <img src="{{ asset('storage/' . $product->image) }}" width="80" alt="{{ $product->title_ar }}">
+                        @if (!empty($product->images) && count($product->images) > 0)
+                            <img src="{{ asset('storage/' . $product->images[0]) }}" width="80" class="img-thumbnail"
+                                alt="{{ $product->title_ar }}">
                         @else
-                            <span>لا يوجد صورة</span>
+                            <span class="text-muted">لا توجد صورة</span>
                         @endif
                     </td>
 
-                    {{-- اسم التصنيف --}}
+                    {{-- التصنيف --}}
                     <td>
-                        {{ $product->category ? $product->category->name_ar : 'بدون تصنيف' }}
+                        {{ $product->category?->name_ar ?? 'بدون تصنيف' }}
                     </td>
 
+                    {{-- الإجراءات --}}
                     <td>
-                        <a href="{{ route('products.edit', $product) }}" class="btn btn-sm btn-warning">تعديل</a>
+                        <a href="{{ route('products.edit', $product) }}" class="btn btn-sm btn-warning">
+                            تعديل
+                        </a>
 
                         <form action="{{ route('products.destroy', $product) }}" method="POST" style="display:inline">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-sm btn-danger" onclick="return confirm('حذف المنتج؟')">حذف</button>
+                            <button class="btn btn-sm btn-danger" onclick="return confirm('حذف المنتج؟')">
+                                حذف
+                            </button>
                         </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-
 @stop

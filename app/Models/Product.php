@@ -18,11 +18,12 @@ class Product extends Model
         'description_fr',
         'description_es',
         'sizes',
-        'image',
+        'images',
     ];
 
     protected $casts = [
         'sizes' => 'array',
+        'images' => 'array', // مهم جدًا
     ];
 
     public function category()

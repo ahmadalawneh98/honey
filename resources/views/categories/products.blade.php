@@ -32,12 +32,16 @@
                             <td>{{ Str::limit($product->description_ar, 50) }}</td>
                             <td>{{ Str::limit($product->description_en, 50) }}</td>
                             <td>
-                                @if ($product->image)
-                                    <img src="{{ asset('storage/' . $product->image) }}" width="80">
+                                @if (!empty($product->images) && count($product->images) > 0)
+                                    <img src="{{ asset('storage/' . $product->images[0]) }}" width="80"
+                                        alt="{{ $product->title_ar }}">
+                                @else
+                                    <span class="text-muted">لا توجد صورة</span>
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('products.edit', $product->id) }}" class="btn btn-sm btn-warning">تعديل</a>
+                                <a href="{{ route('products.edit', $product->id) }}"
+                                    class="btn btn-sm btn-warning">تعديل</a>
                                 <form action="{{ route('products.destroy', $product->id) }}" method="POST"
                                     style="display:inline-block;">
                                     @csrf
