@@ -175,6 +175,67 @@
     <section class="py-5 swiper-section">
         <div class="swiper products-swiper">
             <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="assets/slider-1.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-2.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-3.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-4.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-5.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-6.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-1.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-2.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-3.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-4.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-5.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-6.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-1.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-2.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-3.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-4.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-5.jpg" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/slider-6.jpg" alt="slider">
+                </div>
+            </div>
+
+        </div>
+    </section>
+    {{-- <section class="py-5 swiper-section">
+        <div class="swiper products-swiper">
+            <div class="swiper-wrapper">
                 @foreach ($allImages as $product)
                     <div class="swiper-slide">
                         <img src="{{ asset('storage/' . $product) }}" alt="{{ $product }}" class="img-fluid">
@@ -183,7 +244,7 @@
             </div>
 
         </div>
-    </section>
+    </section> --}}
     <section class="map-section py-5" data-aos="zoom-in">
         <div class="container-fluid px-0 pt-5">
             <div class="heading">

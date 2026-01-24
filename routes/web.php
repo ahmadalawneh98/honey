@@ -12,16 +12,16 @@ use App\Models\Product;
 
 Route::get('/', function () {
     // أحدث المنتجات أولًا
-    $products = Product::latest()->paginate(9);
+    // $products = Product::latest()->paginate(9);
 
-    // جمع كل الصور في Array واحد
-    $allImages = [];
-    foreach ($products as $product) {
-        if (!empty($product->images)) {
-            $allImages = array_merge($allImages, $product->images);
-        }
-    }
-    return view('welcome', compact('products', 'allImages'));
+    // // جمع كل الصور في Array واحد
+    // $allImages = [];
+    // foreach ($products as $product) {
+    //     if (!empty($product->images)) {
+    //         $allImages = array_merge($allImages, $product->images);
+    //     }
+    // }
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
