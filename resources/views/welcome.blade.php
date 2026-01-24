@@ -66,13 +66,13 @@
     <section class="hero">
         <div class="hero-video-wrapper">
             <video autoplay muted loop playsinline class="hero-video">
-                <source src="assets/header.mp4" type="video/mp4">
+                <source src="assets/Website video.MP4" type="video/mp4">
             </video>
         </div>
         @include('layouts.header')
 
         <div class="hero-inner py-5">
-            <div class="rotating-text-wrapper mb-4">
+            {{-- <div class="rotating-text-wrapper mb-4">
                 <h2 class="t1" data-en="The best quality Honey from our farm"
                     data-ar="أفضل عسل بجودة عالية من مزرعتنا" data-es="La mejor miel de calidad de nuestra granja"
                     data-fr="Le meilleur miel de qualité de notre ferme">
@@ -97,7 +97,7 @@
                     </span>
                     <span class="arrow-circle"><i class="fas fa-arrow-down"></i></span>
                 </a>
-            </div>
+            </div> --}}
 
         </div>
     </section>
@@ -106,8 +106,8 @@
             <div class="row g-4 justify-content-center align-items-center">
                 <div class="col-lg-6" data-aos="fade-up">
                     <div class="text p-3">
-                        <h2 data-en="Brief About Bee&Honey" data-ar="نبذة عن Bee&Honey"
-                            data-es="Breve sobre Bee&Honey" data-fr="Bref sur Bee&Honey">
+                        <h2 data-en="Brief About Bee&Honey" data-ar="نبذة عن Bee&Honey" data-es="Breve sobre Bee&Honey"
+                            data-fr="Bref sur Bee&Honey">
                             Brief About Bee&Honey
                         </h2>
                         <p class="text-muted"
@@ -176,59 +176,66 @@
         <div class="swiper products-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="assets/slider-1.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-2.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-3.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-4.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-5.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-6.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-1.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-2.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-3.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-4.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-5.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-6.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-1.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-2.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-3.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-4.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-5.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/slider-6.jpg" alt="slider">
+                    <img src="assets/1.png" alt="slider">
                 </div>
+                <div class="swiper-slide">
+                    <img src="assets/1.png" alt="slider">
+                </div>
+                <div class="swiper-slide">
+                    <img src="assets/1.png" alt="slider">
+                </div>
+
             </div>
 
         </div>

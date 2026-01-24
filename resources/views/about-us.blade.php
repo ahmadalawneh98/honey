@@ -141,23 +141,23 @@
             </div>
         </div>
     </nav>
-     <section class="about-honey py-5" id="about">
+    <section class="about-honey py-5" id="about">
         <div class="container py-5">
             <div class="pt-5">
                 <div class="row align-items-center g-4 justify-content-center pt-5">
                     <div class="col-lg-6 position-relative" data-aos="fade-up">
                         <div class="about-img-wrapper">
-                            <img src="assets/about-1.jpg" class="img-fluid main-img" alt="Beekeeper">
+                            <img src="assets/about-4.jpg" class="img-fluid main-img" alt="Beekeeper">
 
                             <div class="video-box">
-                                <img src="assets/about-2.jpg" alt="Honey Bee">
+                                <img src="assets/about-3.jpg" alt="Honey Bee">
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="fade-up">
                         <div class="about-content">
-                            <span class="about-subtitle" data-en="About Us" data-ar="من نحن" data-es="Sobre Nosotros"
-                                data-fr="À propos de nous">
+                            <span class="about-subtitle" data-en="About Us" data-ar="من نحن"
+                                data-es="Sobre Nosotros" data-fr="À propos de nous">
                                 About Us
                             </span>
 
@@ -270,8 +270,8 @@
                                                 <img src="assets/award-1.png" alt="award">
                                             </div>
                                             <div>
-                                                <h3 data-en="100% Natural" data-ar="100٪ طبيعي" data-es="100% Natural"
-                                                    data-fr="100 % Naturel">
+                                                <h3 data-en="100% Natural" data-ar="100٪ طبيعي"
+                                                    data-es="100% Natural" data-fr="100 % Naturel">
                                                     100% Natural
                                                 </h3>
 
@@ -476,7 +476,7 @@
     <section class="why-us">
         <div class="container">
             <div class="row g-4 align-items-center justify-content-center mb-5">
-                
+
                 <div class="col-lg-8">
                     <div class="content">
                         <h2 class="mb-5 text-center" data-ar="لماذا يثق بنا شركاؤنا؟"
@@ -552,8 +552,9 @@
                 <div class="row g-4 justify-content-center mt-0">
                     <div class="col-md-6 col-lg-4">
                         <div class="why-us-card">
-                            <h3 class="mb-3" data-ar="خبرة تمتد لأكثر من 19 عامًا" data-en="Over 19 years of experience"
-                                data-fr="Plus de 19 ans d’expérience" data-es="Más de 19 años de experiencia">Over 19
+                            <h3 class="mb-3" data-ar="خبرة تمتد لأكثر من 19 عامًا"
+                                data-en="Over 19 years of experience" data-fr="Plus de 19 ans d’expérience"
+                                data-es="Más de 19 años de experiencia">Over 19
                                 years
                                 of experience</h3>
                             <p data-ar="نمتلك خبرة عريقة تمتد لأكثر من 19 عامًا في مجال تصنيع المنتجات والمشروبات الطبيعية بالعسل والمكملات الغذائية. نعمل وفق شهادات معتمدة محليًا ودوليًا، ونعتمد على أحدث المعدات والتقنيات في عمليات التصنيع، مع الالتزام بأعلى معايير الكفاءة والجودة."
@@ -605,7 +606,8 @@
                     </div>
                     <div class="col-md-6 col-lg-4">
                         <div class="why-us-card third-card">
-                            <h3 class="mb-3" data-ar="الابتكار وتطوير المنتجات" data-en="Innovation and Product Development"
+                            <h3 class="mb-3" data-ar="الابتكار وتطوير المنتجات"
+                                data-en="Innovation and Product Development"
                                 data-fr="Innovation et Développement de Produits"
                                 data-es="Innovación y Desarrollo de Productos">Innovation and Product Development</h3>
                             <p data-ar="نؤمن بأن الابتكار هو أساس الاستدامة والتميز، لذلك نستثمر باستمرار في تطوير التركيبات وتحسين المنتجات لمواكبة تطورات السوق واحتياجات المستهلكين المتغيرة."
@@ -711,7 +713,8 @@
                         <span data-ar="كيف تضمن بي آند هني ثبات الجودة والطعم؟"
                             data-en="How does Bee & Honey ensure consistent quality and taste?"
                             data-fr="Comment Bee & Honey garantit-elle la constance de la qualité et du goût ?"
-                            data-es="¿Cómo garantiza Bee & Honey la consistencia de la calidad y el sabor?">How does Bee
+                            data-es="¿Cómo garantiza Bee & Honey la consistencia de la calidad y el sabor?">How does
+                            Bee
                             & Honey ensure consistent quality and taste?</span>
                         <span class="faq-icon">+</span>
                     </button>

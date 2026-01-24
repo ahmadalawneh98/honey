@@ -85,7 +85,7 @@
 
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                {{-- <div class="col-lg-4 col-md-6">
                     <h5 class="footer-title" data-en="Newsletter" data-ar="النشرة الإخبارية" data-es="Boletín"
                         data-fr="Newsletter">
                         Newsletter
@@ -108,7 +108,7 @@
                         </button>
                     </form>
 
-                </div>
+                </div> --}}
             </div>
 
         </div>
