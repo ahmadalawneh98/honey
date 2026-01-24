@@ -15,7 +15,6 @@
                     <thead>
                         <tr>
                             <th>الاسم (عربي)</th>
-                            <th>الوصف (عربي)</th>
                             <th>عدد المنتجات</th>
                             <th>الصورة</th>
                             <th>إجراءات</th>
@@ -25,7 +24,6 @@
                         @foreach ($categories as $cat)
                             <tr>
                                 <td>{{ $cat->name_ar }}</td>
-                                <td>{{ Str::limit($cat->description_ar, 50) }}</td>
                                 <td>
                                     @if ($cat->products->count() > 0)
                                         <a href="{{ route('categories.products', $cat->id) }}">

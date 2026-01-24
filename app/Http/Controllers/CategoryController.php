@@ -25,10 +25,6 @@ class CategoryController extends Controller
             'name_en' => 'required|string|max:255',
             'name_fr' => 'required|string|max:255',
             'name_es' => 'required|string|max:255',
-            'description_ar' => 'required|string',
-            'description_en' => 'required|string',
-            'description_fr' => 'required|string',
-            'description_es' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
@@ -57,10 +53,6 @@ class CategoryController extends Controller
             'name_en' => 'required|string|max:255',
             'name_fr' => 'required|string|max:255',
             'name_es' => 'required|string|max:255',
-            'description_ar' => 'required|string',
-            'description_en' => 'required|string',
-            'description_fr' => 'required|string',
-            'description_es' => 'required|string',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 

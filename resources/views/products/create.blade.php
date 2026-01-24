@@ -74,17 +74,41 @@
             </div>
         @endforeach
 
-        {{-- أحجام العبوات --}}
+        {{-- أحجام العبوات لكل لغة --}}
         <div class="card card-outline card-secondary">
             <div class="card-header">
                 <h5 class="card-title">أحجام العبوات</h5>
             </div>
 
             <div class="card-body">
-                <input type="text" name="sizes[]" class="form-control mb-2" placeholder="أدخل حجم العبوة">
-                <input type="text" name="sizes[]" class="form-control mb-2" placeholder="إضافة حجم جديد">
+                @php
+                    $languages = ['ar' => 'العربية', 'en' => 'الإنجليزية', 'fr' => 'الفرنسية', 'es' => 'الإسبانية'];
+                @endphp
+
+                @foreach ($languages as $langCode => $langName)
+                    <h6>اللغة: {{ $langName }}</h6>
+
+                    @php
+                        $sizes = $product->{'sizes_' . $langCode} ?? [];
+                    @endphp
+
+                    {{-- عرض الأحجام الحالية --}}
+                    @if ($sizes)
+                        @foreach ($sizes as $size)
+                            <input type="text" name="sizes_{{ $langCode }}[]" class="form-control mb-2"
+                                value="{{ $size }}" placeholder="أدخل حجم العبوة">
+                        @endforeach
+                    @endif
+
+                    {{-- حقل لإضافة حجم جديد --}}
+                    <input type="text" name="sizes_{{ $langCode }}[]" class="form-control mb-2"
+                        placeholder="إضافة حجم جديد">
+
+                    <hr>
+                @endforeach
             </div>
         </div>
+
 
         <button type="submit" class="btn btn-success mt-3">
             <i class="fas fa-save"></i> حفظ المنتج

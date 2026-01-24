@@ -74,7 +74,7 @@
         <div class="hero-inner py-5">
             {{-- <div class="rotating-text-wrapper mb-4">
                 <h2 class="t1" data-en="The best quality Honey from our farm"
-                    data-ar="أفضل عسل بجودة عالية من مزرعتنا" data-es="La mejor miel de calidad de nuestra granja"
+                    data-ar="أفضل عسل بجودة عالية من مزارعنا" data-es="La mejor miel de calidad de nuestra granja"
                     data-fr="Le meilleur miel de qualité de notre ferme">
                     The best quality Honey from our farm
                 </h2>
@@ -101,8 +101,8 @@
 
         </div>
     </section>
-    <section class="py-5 about-brief" id="brief">
-        <div class="container py-5">
+    <section class="about-brief" id="brief">
+        <div class="container pt-5 py-5">
             <div class="row g-4 justify-content-center align-items-center">
                 <div class="col-lg-6" data-aos="fade-up">
                     <div class="text p-3">
@@ -172,70 +172,47 @@
     </section>
     <div class="section-divider"></div>
 
-    <section class="py-5 swiper-section">
+    <section class="swiper-section">
         <div class="swiper products-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/freepik__create-a-highend-luxury-product-photography-scene-__55386.png"
+                        alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/freepik__ultra-realistic-modern-premium-product-advertising__55390.png"
+                        alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/freepik__ultra-realistic-modern-premium-product-advertising__55391.png"
+                        alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/freepik__ultra-realistic-premium-product-advertising-photo-__55389.png"
+                        alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/freepik__ultra-realistic-premium-product-photography-of-the__55392.png"
+                        alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/freepik__ultra-realistic-premium-product-photography-of-the__55393.png"
+                        alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/freepik__ultra-realistic-product-photography-of-the-exact-b__55385.png"
+                        alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/freepik__ultraphotorealistic-premium-product-advertising-sh__55388.png"
+                        alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/Malt_story_UAE.png" alt="slider">
                 </div>
                 <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
+                    <img src="assets/Creamy_poster-8.png" alt="slider">
                 </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-                <div class="swiper-slide">
-                    <img src="assets/1.png" alt="slider">
-                </div>
-
             </div>
 
         </div>
@@ -252,8 +229,8 @@
 
         </div>
     </section> --}}
-    <section class="map-section py-5" data-aos="zoom-in">
-        <div class="container-fluid px-0 pt-5">
+    <section class="map-section" data-aos="zoom-in">
+        <div class="container-fluid px-0">
             <div class="heading">
                 <div class="container pb-4">
                     <h2 class="text-center mb-2" data-en="Our Branch Locations" data-ar="مواقع فروعنا"
@@ -465,7 +442,7 @@
     </section>
 
 
-    <section class="certificates-section py-5">
+    <section class="certificates-section">
         <div class="container pb-5">
             <h2 class="text-center mt-2" data-aos="zoom-in" data-en="Our Certificates" data-ar="شهاداتنا"
                 data-es="Nuestros certificados" data-fr="Nos certificats">
@@ -545,7 +522,7 @@
         </div>
     </section>
 
-    <section class="catalog-section py-5 mb-5">
+    <section class="catalog-section py-5">
         <div class="container">
             <div class="row g-4 align-items-center">
                 <div class="col-lg-6 text-center">
@@ -566,7 +543,7 @@
         </div>
     </section>
 
-    <section class="py-5 counters" id="honeyCounters">
+    <section class="pb-5 counters" id="honeyCounters">
         <div class="container">
             <div class="row g-4 pt-3 mt-3 justify-content-center">
                 <div class="col-md-6 col-lg-3" data-aos="zoom-in">

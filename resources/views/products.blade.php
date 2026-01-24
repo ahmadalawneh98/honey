@@ -185,21 +185,57 @@
                                     </h3>
 
                                     {{-- الوصف --}}
-                                    <p data-en="{{ $product->description_en }}"
-                                        data-ar="{{ $product->description_ar }}"
-                                        data-es="{{ $product->description_es }}"
-                                        data-fr="{{ $product->description_fr }}">
-                                        {{ $product->description_en }}
-                                    </p>
-
-                                    {{-- الأحجام --}}
-                                    <div class="size" data-en="{{ implode(' | ', $product->sizes ?? []) }}"
-                                        data-ar="{{ implode(' | ', $product->sizes ?? []) }}"
-                                        data-es="{{ implode(' | ', $product->sizes ?? []) }}"
-                                        data-fr="{{ implode(' | ', $product->sizes ?? []) }}">
-                                        {{ implode(' | ', $product->sizes ?? []) }}
+                                    <div class="product-description-container">
+                                        <p class="product-description" data-en="{{ $product->description_en }}"
+                                            data-ar="{{ $product->description_ar }}"
+                                            data-es="{{ $product->description_es }}"
+                                            data-fr="{{ $product->description_fr }}">
+                                            {{ $product->description_en }}
+                                        </p>
+                                        <button class="read-more-btn" onclick="toggleReadMore(this)">
+                                            <span class="read-more-text">Read More</span>
+                                            <span class="read-less-text" style="display: none;">Read Less</span>
+                                        </button>
                                     </div>
 
+                                    <style>
+                                        .product-description-container {
+                                            position: relative;
+                                        }
+
+                                        .product-description {
+                                            max-height: 100px;
+                                            overflow: hidden;
+                                            transition: max-height 0.3s ease;
+                                            position: relative;
+                                        }
+
+                                        .product-description.expanded {
+                                            max-height: none;
+                                        }
+
+                                        .read-more-btn {
+                                            background: none;
+                                            border: none;
+                                            color: #007bff;
+                                            cursor: pointer;
+                                            padding: 5px 0;
+                                            font-size: 14px;
+                                            text-decoration: underline;
+                                            margin-top: 5px;
+                                            display: none;
+                                            margin: 0 auto;
+                                            /* مخفي افتراضياً */
+                                        }
+                                    </style>
+
+
+                                    {{-- الأحجام --}}
+                                    <div class="size" data-en="{{ $product->sizes_en ?? '' }}"
+                                        data-ar="{{ $product->sizes_ar ?? '' }}"
+                                        data-es="{{ $product->sizes_es ?? '' }}"
+                                        data-fr="{{ $product->sizes_fr ?? '' }}">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -292,6 +328,119 @@
             allowTouchMove: true,
             grabCursor: true
         });
+    </script>
+
+    <script>
+        // ترجمات الزرار
+        const buttonTranslations = {
+            en: {
+                more: 'Read More',
+                less: 'Read Less'
+            },
+            ar: {
+                more: 'قراءة المزيد',
+                less: 'قراءة أقل'
+            },
+            es: {
+                more: 'Leer Más',
+                less: 'Leer Menos'
+            },
+            fr: {
+                more: 'Lire Plus',
+                less: 'Lire Moins'
+            }
+        };
+
+        function toggleReadMore(button) {
+            const container = button.closest('.product-description-container');
+            const description = container.querySelector('.product-description');
+            const readMoreText = button.querySelector('.read-more-text');
+            const readLessText = button.querySelector('.read-less-text');
+
+            description.classList.toggle('expanded');
+
+            if (description.classList.contains('expanded')) {
+                readMoreText.style.display = 'none';
+                readLessText.style.display = 'inline';
+            } else {
+                readMoreText.style.display = 'inline';
+                readLessText.style.display = 'none';
+            }
+        }
+
+        // دالة للتحقق من طول النص وإظهار/إخفاء الزرار
+        function checkDescriptionLength(container) {
+            const description = container.querySelector('.product-description');
+            const button = container.querySelector('.read-more-btn');
+
+            // التحقق من ارتفاع النص
+            if (description.scrollHeight > 100) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        }
+
+        // دالة لتحديث اللغة
+        function updateProductLanguage() {
+            const lang = localStorage.getItem('lang') || 'en';
+
+            const containers = document.querySelectorAll('.product-description-container');
+
+            containers.forEach(container => {
+                const description = container.querySelector('.product-description');
+                const button = container.querySelector('.read-more-btn');
+                const readMoreText = button.querySelector('.read-more-text');
+                const readLessText = button.querySelector('.read-less-text');
+                const isExpanded = description.classList.contains('expanded');
+
+                const descText = description.getAttribute('data-' + lang);
+                if (descText) {
+                    description.textContent = descText;
+                }
+
+                if (buttonTranslations[lang]) {
+                    readMoreText.textContent = buttonTranslations[lang].more;
+                    readLessText.textContent = buttonTranslations[lang].less;
+                }
+
+                // التحقق من طول النص بعد تغيير اللغة
+                setTimeout(() => checkDescriptionLength(container), 50);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // التحقق من طول النص عند تحميل الصفحة
+            const containers = document.querySelectorAll('.product-description-container');
+            containers.forEach(container => {
+                checkDescriptionLength(container);
+            });
+
+            updateProductLanguage();
+
+            const languageDropdownItems = document.querySelectorAll('[data-lang], .dropdown-item[onclick*="lang"]');
+
+            languageDropdownItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    setTimeout(updateProductLanguage, 100);
+                });
+            });
+        });
+
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'dir') {
+                    updateProductLanguage();
+                }
+            });
+        });
+
+        if (document.documentElement) {
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['dir', 'lang']
+            });
+        }
     </script>
 </body>
 

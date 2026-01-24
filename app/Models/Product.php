@@ -17,12 +17,14 @@ class Product extends Model
         'description_en',
         'description_fr',
         'description_es',
-        'sizes',
         'images',
+        'sizes_ar',
+        'sizes_en',
+        'sizes_fr',
+        'sizes_es',
     ];
 
     protected $casts = [
-        'sizes' => 'array',
         'images' => 'array', // مهم جدًا
     ];
 

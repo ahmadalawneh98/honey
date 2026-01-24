@@ -44,11 +44,6 @@
                             <input type="text" name="name_{{ $key }}" class="form-control"
                                 value="{{ old('name_' . $key) }}" required>
                         </div>
-
-                        <div class="form-group mb-3">
-                            <label>الوصف</label>
-                            <textarea name="description_{{ $key }}" class="form-control" rows="3">{{ old('description_' . $key) }}</textarea>
-                        </div>
                     </div>
                 </div>
             @endforeach

@@ -191,10 +191,10 @@
                                     </h3>
 
                                 </div>
-                                <a href="#" data-en="Jordan Salt Industrial City"
-                                    data-ar="مدينة السلط الصناعية" data-es="Ciudad Industrial de Sal de Jordania"
+                                <a href="#" data-en="Al-salt industrial city" data-ar="مدينة السلط الصناعية"
+                                    data-es="Ciudad Industrial de Sal de Jordania"
                                     data-fr="Ville industrielle de sel de Jordanie">
-                                    Jordan Salt Industrial City
+                                    Al-salt industrial city
                                 </a>
 
                             </div>
@@ -209,14 +209,15 @@
                                 </div>
 
                                 <div class="icons d-flex flex-wrap gap-2">
-                                    <a href="#" aria-label="Instagram">
+                                    <a href="https://www.instagram.com/beeandhoney.official?igsh=MW9lNnBmb3ppdTZyMA=="
+                                        aria-label="Instagram">
                                         <i class="fa-brands fa-instagram"></i>
                                     </a>
-                                    <a href="#" aria-label="Facebook">
+                                    <a href="https://web.facebook.com/beeandhoney" aria-label="Facebook">
                                         <i class="fa-brands fa-facebook-f"></i>
                                     </a>
-                                    <a href="#" aria-label="Twitter">
-                                        <i class="fa-brands fa-x-twitter"></i>
+                                    <a href="https://www.linkedin.com/company/bee-and-honey/" aria-label="Twitter">
+                                        <i class="fa-brands fa-linkedin-in"></i>
                                     </a>
                                 </div>
                             </div>
@@ -245,7 +246,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input type="tel" id="phone" class="form-control"
+                                <input type="tel" id="phone" class="form-control tele-phone"
                                     data-placeholder-en="Your Phone" data-placeholder-ar="رقم هاتفك"
                                     data-placeholder-es="Tu Teléfono" data-placeholder-fr="Votre Téléphone"
                                     data-required-en="Phone is required" data-required-ar="رقم الهاتف مطلوب"

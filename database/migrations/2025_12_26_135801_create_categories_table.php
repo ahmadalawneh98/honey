@@ -20,12 +20,6 @@ return new class extends Migration
             $table->string('name_fr');
             $table->string('name_es');
 
-            // الوصف بعدة لغات
-            $table->text('description_ar');
-            $table->text('description_en');
-            $table->text('description_fr');
-            $table->text('description_es');
-
             // الصورة
             $table->string('image')->nullable();
 

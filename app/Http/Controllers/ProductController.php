@@ -70,17 +70,15 @@ class ProductController extends Controller
             'remove_images'   => 'nullable|array',
             'remove_images.*' => 'string',
 
-            // الأحجام
-            'sizes' => 'nullable|array',
-            'sizes.*' => 'nullable|string',
+            // الأحجام لكل لغة كسلاسل نصية
+            'sizes_ar' => 'nullable|string',
+            'sizes_en' => 'nullable|string',
+            'sizes_fr' => 'nullable|string',
+            'sizes_es' => 'nullable|string',
         ]);
 
+        // استثناء الصور للحفظ منفصلة
         $data = $request->except('images', 'remove_images');
-
-        // فلترة الأحجام لإزالة الفارغة
-        if (isset($request->sizes)) {
-            $data['sizes'] = array_values(array_filter($request->sizes, fn($size) => trim($size) !== ''));
-        }
 
         // الصور الحالية
         $currentImages = $product->images ?? [];
@@ -109,11 +107,13 @@ class ProductController extends Controller
         // تحديث الصور
         $data['images'] = $currentImages;
 
+        // تحديث المنتج
         $product->update($data);
 
         return redirect()->route('products.index')
-            ->with('success', 'تم تحديث المنتج');
+            ->with('success', 'تم تحديث المنتج بنجاح');
     }
+
 
     public function destroy(Product $product)
     {

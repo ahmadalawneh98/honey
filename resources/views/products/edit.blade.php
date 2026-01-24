@@ -103,13 +103,21 @@
             </div>
 
             <div class="card-body">
-                @if ($product->sizes)
-                    @foreach ($product->sizes as $size)
-                        <input type="text" name="sizes[]" class="form-control mb-2" value="{{ $size }}">
-                    @endforeach
-                @endif
+                <h5>أحجام المنتج باللغة العربية</h5>
+                <input type="text" name="sizes_ar" class="form-control mb-2" value="{{ $product->sizes_ar ?? '' }}"
+                    placeholder="أدخل أحجام المنتج">
 
-                <input type="text" name="sizes[]" class="form-control mb-2" placeholder="إضافة حجم جديد">
+                <h5>أحجام المنتج باللغة الإنجليزية</h5>
+                <input type="text" name="sizes_en" class="form-control mb-2" value="{{ $product->sizes_en ?? '' }}"
+                    placeholder="أدخل أحجام المنتج">
+
+                <h5>أحجام المنتج باللغة الفرنسية</h5>
+                <input type="text" name="sizes_fr" class="form-control mb-2" value="{{ $product->sizes_fr ?? '' }}"
+                    placeholder="أدخل أحجام المنتج">
+
+                <h5>أحجام المنتج باللغة الإسبانية</h5>
+                <input type="text" name="sizes_es" class="form-control mb-2" value="{{ $product->sizes_es ?? '' }}"
+                    placeholder="أدخل أحجام المنتج">
             </div>
         </div>
 

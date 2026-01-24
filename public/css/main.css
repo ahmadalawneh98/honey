@@ -86,7 +86,7 @@ body {
 
 .hero {
     position: relative;
-    min-height: 100vh;
+    min-height: 50vh;
     overflow: hidden;
 }
 
@@ -199,7 +199,7 @@ body {
 
 .hero-inner {
     z-index: 5;
-    min-height: 100vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -208,6 +208,14 @@ body {
     color: var(--white);
     padding: 0px 15px;
     background-color: transparent;
+}
+@media screen and (min-width: 900px) {
+    .hero {
+        min-height: 100vh;
+    }
+    .hero-inner {
+        min-height: 100vh;
+    }
 }
 
 .arrow-circle .fa-arrow-down {
@@ -343,7 +351,7 @@ body {
     background-color: #fff;
     position: relative;
     overflow: hidden;
-    padding-bottom: 120px !important;
+    padding-bottom: 30px !important;
 }
 
 @keyframes floatY {
@@ -436,35 +444,25 @@ html[dir="rtl"] .about-subtitle::before {
 .main-img {
     border-radius: 20px;
 }
-
 .video-box {
     position: absolute;
     top: 250px;
-    right: 20px;
+    right: 5px;
     border-radius: 20px;
     width: 350px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     animation: float-y 4s ease-in-out infinite;
 }
+
 @media screen and (min-width: 768px) {
     .video-box {
         top: 400px;
+        right: 20px;
     }
 }
-@media screen and (min-width: 992px) {
-    .video-box {
-        top: 300px;
-    }
-}
-@media screen and (min-width: 1200px) {
-    .video-box {
-        top: 400px;
-    }
-}
-
 html[dir="rtl"] .video-box {
-    right: 40%;
+    right: 20%;
 }
 
 @keyframes float-y {
@@ -928,9 +926,9 @@ html[dir="rtl"] .video-box {
 }
 .category-box {
     padding-bottom: 60px !important;
-    background-color: var(--background);
+    background-color: #fdd27b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
-
 .category-box:hover,
 .news-box:hover {
     animation: vibrate 2s linear 1;
@@ -995,9 +993,26 @@ html[dir="rtl"] .video-box {
 
 .category-box h3,
 .news-box h3 {
-    font-size: 36px;
+    font-size: 20px;
     font-weight: 700;
     font-style: italic;
+}
+@media screen and (min-width: 500px) {
+    .category-box h3 {
+        font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1400px) {
+    .category-box h3 {
+        font-size: 22px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .category-box h3 {
+        font-size: 26px;
+    }
 }
 
 .category-box:hover .overlay,
@@ -1598,13 +1613,12 @@ html[dir="rtl"] .modal-header .btn-close {
     overflow: hidden;
     border-color: #dabd95;
     border-radius: 30px;
-    background-color: #fcf3e6 !important;
+    background-color: #fff !important;
     display: flex;
     flex-direction: column;
     gap: 12px;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
     height: 100%;
     transition: all 0.5s ease-in-out;
 }
@@ -1614,22 +1628,16 @@ html[dir="rtl"] .modal-header .btn-close {
 }
 
 .product-card .product-img {
-    background-color: transparent;
     position: relative;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px 20px;
-    height: 315px;
+    height: 550px;
 }
 
 .product-card .product-img img {
-    object-fit: cover;
-    width: auto;
+    width: 100%;
     transform: scale(1);
     transition: all 0.5s ease-in-out;
+    height: 100%;
 }
 
 .product-card:hover .product-img img {
@@ -1649,6 +1657,7 @@ html[dir="rtl"] .modal-header .btn-close {
     position: absolute;
     top: 20px;
     right: 20px;
+    z-index: 5;
 }
 
 .product-card .product-info {
@@ -1658,12 +1667,34 @@ html[dir="rtl"] .modal-header .btn-close {
     text-align: center;
     border-style: solid;
     border-width: 1px;
-    border-color: #dabd95;
+    border-color: #fff;
     border-radius: 100px 100px 0 0;
-    padding: 30px 20px;
+    padding: 30px 5px;
     background-color: #fff1db;
     margin-top: 20px;
     margin-bottom: -8px;
+    width: 100%;
+}
+.product-card .product-info p {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    /* -webkit-line-clamp: 3; */
+    overflow: hidden;
+}
+
+.product-card button {
+    display: inline-block;
+    margin-top: 6px;
+    color: #c89b2f;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: underline;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    border: none;
 }
 
 .product-card .product-info::before {
@@ -1675,6 +1706,7 @@ html[dir="rtl"] .modal-header .btn-close {
     height: 100%;
     background-image: url("../assets/product-content-shape.png");
     background-repeat: no-repeat;
+    z-index: -1;
 }
 
 .product-card .product-info h3 {
@@ -1862,13 +1894,13 @@ html[dir="rtl"] .marker-pin::after {
 }
 
 .categories {
+    font-family: var(--Naveid);
     position: relative;
     overflow: hidden;
     z-index: 1;
-    background-image: url("../assets/certificate-bg.jpg");
-    background-size: cover;
     height: 100%;
-    padding-bottom: 120px !important;
+    background-color: #fef9f1;
+    padding-bottom: 60px !important;
 }
 
 .contact::after {
@@ -2901,4 +2933,40 @@ html[dir="rtl"] .trust-list li {
     width: 100%;
     height: 120%;
     object-fit: cover;
+}
+html[dir="rtl"] .branch-box .desc p,
+html[dir="rtl"] .catalog-content,
+html[dir="rtl"] .counter-box .title,
+html[dir="rtl"] .footer-section .footer-title,
+html[dir="rtl"] .footer-links a,
+html[dir="rtl"] .footer-section .footer-text,
+html[dir="rtl"] .text-gold,
+html[dir="rtl"] .about-subtitle,
+html[dir="rtl"] .about-desc,
+html[dir="rtl"] .experience-box p,
+html[dir="rtl"] .about-brief p,
+html[dir="rtl"] .fqs .header p,
+html[dir="rtl"] .section-subtitle,
+html[dir="rtl"] .modal-title,
+html[dir="rtl"] .categories-box h2,
+html[dir="rtl"] .latest-news-card h2,
+html[dir="rtl"] .working-hours h3,
+html[dir="rtl"] .blog-detail-content .detail-desc p,
+html[dir="rtl"] .blog-detail-content .article p,
+html[dir="rtl"] .blog-detail-content .article ul,
+html[dir="rtl"] .news-item h3,
+html[dir="rtl"] .badge-featured,
+html[dir="rtl"] .form h3,
+html[dir="rtl"] .footer-title,
+html[dir="rtl"] .footer-links a,
+html[dir="rtl"] .footer-section .footer-text,
+html[dir="rtl"] .faq-question,
+html[dir="rtl"] .faq-answer p,
+html[dir="rtl"] .branch-box .desc p,
+html[dir="rtl"] .goal-card .content p,
+html[dir="rtl"] .value-card .content p {
+    font-family: var(--Naveid) !important;
+}
+html[dir="rtl"] .tele-phone {
+    text-align: end;
 }
