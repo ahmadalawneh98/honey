@@ -7,18 +7,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Basic SEO -->
-    <title>Blog-Detail| Bee & Honey - Pure Natural Honey</title>
-    <meta name="description"
-        content="Learn about Bee & Honey, a brand of Yemeni Honey House. We offer pure, natural honey and honey products crafted with care to support a healthy lifestyle.">
-    <meta name="keywords"
-        content="Bee & Honey, natural honey, honey products, Yemeni Honey, pure honey, raw honey, honey packs, honey drinks">
-    <meta name="author" content="Bee & Honey">
-    <meta name="robots" content="index, follow">
-    @php
-        $seo = \App\Models\SeoSetting::first();
-    @endphp
+    <!-- Title -->
+    <title data-ar="{{ $blog->seo_title_ar }}" data-en="{{ $blog->seo_title_en }}" data-es="{{ $blog->seo_title_es }}"
+        data-fr="{{ $blog->seo_title_fr }}">
+    </title>
 
-    {!! $seo->meta ?? '' !!}
+    <!-- Meta Description -->
+    <meta name="description" data-ar="{{ $blog->seo_description_ar }}" data-en="{{ $blog->seo_description_en }}"
+        data-es="{{ $blog->seo_description_es }}" data-fr="{{ $blog->seo_description_fr }}"
+        content="{{ $blog->{'seo_description_' . app()->getLocale()} ?? '' }}">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" data-ar="{{ $blog->seo_keywords_ar }}" data-en="{{ $blog->seo_keywords_en }}"
+        data-es="{{ $blog->seo_keywords_es }}" data-fr="{{ $blog->seo_keywords_fr }}"
+        content="{{ $blog->{'seo_keywords_' . app()->getLocale()} ?? '' }}">
+    <meta property="og:image" content="{{ asset('storage/' . $blog->image) }}" />
+
+    {!! $blog->meta ?? '' !!}
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="About Bee & Honey - Pure Natural Honey">

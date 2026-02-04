@@ -6,26 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Ensures proper rendering in IE -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary Meta Tags -->
-    <title>Bee & Honey - Natural Honey Products</title>
-    <meta name="description"
-        content="Bee & Honey offers the finest natural honey from our farm. Explore our honey products, e-catalog, and branch locations.">
-    <meta name="keywords" content="Bee & Honey, honey products, natural honey, Yemeni Honey, e-catalog, honey farm">
-    <meta name="author" content="Bee & Honey">
-    <meta name="robots" content="index, follow">
-    @php
-        $seo = \App\Models\SeoSetting::first();
-    @endphp
 
-    {!! $seo->meta ?? '' !!}
+    @if ($seo)
+        <!-- Title -->
+        <title data-ar="{{ $seo->title_ar }}" data-en="{{ $seo->title_en }}" data-es="{{ $seo->title_es }}"
+            data-fr="{{ $seo->title_fr }}">
+        </title>
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Bee & Honey - Natural Honey Products">
-    <meta property="og:description"
-        content="Explore the finest natural honey from Bee & Honey. Shop honey products and learn more about our farm.">
-    <meta property="og:url" content="https://www.yourwebsite.com/">
-    <meta property="og:image" content="https://www.yourwebsite.com/assets/og-image.jpg">
-    <meta property="og:site_name" content="Bee & Honey">
+        <!-- Meta Description -->
+        <meta name="description" data-ar="{{ $seo->description_ar }}" data-en="{{ $seo->description_en }}"
+            data-es="{{ $seo->description_es }}" data-fr="{{ $seo->description_fr }}"
+            content="{{ $seo->{'description_' . app()->getLocale()} ?? '' }}">
+
+        <!-- Meta Keywords -->
+        <meta name="keywords" data-ar="{{ $seo->keywords_ar }}" data-en="{{ $seo->keywords_en }}"
+            data-es="{{ $seo->keywords_es }}" data-fr="{{ $seo->keywords_fr }}"
+            content="{{ $seo->{'keywords_' . app()->getLocale()} ?? '' }}">
+        @if ($seo && $seo->og_image)
+            <meta property="og:image" content="{{ asset('storage/' . $seo->og_image) }}" />
+        @endif
+    @endif
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
