@@ -3,15 +3,46 @@
 @section('title', __('messages.blogs'))
 
 @section('content_header')
-    <h1>{{ __('messages.blogs') }}</h1>
+    <h1>
+        @if (request('status') === 'blog')
+            {{ __('messages.blogs') }}
+        @elseif(request('status') === 'new')
+            {{ __('messages.news') }}
+        @else
+            {{ __('messages.blogs') }} / {{ __('messages.news') }}
+        @endif
+    </h1>
+
 @stop
 
 @section('content')
     <div class="container-fluid">
 
-        <a href="{{ route('blogs.create') }}" class="btn btn-primary mb-3">
-            <i class="fas fa-plus"></i> {{ __('messages.add_new_blog') }}
-        </a>
+        <div class="" style="    display: flex;
+    justify-content: space-between;">
+            <a href="{{ route('blogs.create') }}" class="btn btn-primary mb-3">
+                <i class="fas fa-plus"></i> {{ __('messages.add_new_blog') }}
+            </a>
+            <div class="mb-4 d-flex gap-2">
+
+                <a href="{{ route('blogs.index') }}"
+                    class="btn {{ request('status') == null ? 'btn-dark' : 'btn-outline-dark' }}">
+                    الكل
+                </a>
+
+                <a href="{{ route('blogs.index', ['status' => 'blog']) }}"
+                    class="btn {{ request('status') == 'blog' ? 'btn-primary' : 'btn-outline-primary' }}">
+                    المدونات
+                </a>
+
+                <a href="{{ route('blogs.index', ['status' => 'new']) }}"
+                    class="btn {{ request('status') == 'new' ? 'btn-success' : 'btn-outline-success' }}">
+                    الأخبار
+                </a>
+
+            </div>
+
+        </div>
 
         @if (session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>

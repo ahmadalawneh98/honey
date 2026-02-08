@@ -13,7 +13,7 @@ return [
   // Blogs
   'blogs' => 'Blogs',
   'add_blog' => 'Add Blog',
-  'add_new_blog' => 'Add New Blog',
+  'add_new_blog' => 'Add New Blog /News',
   'edit_blog' => 'Edit Blog',
   'update_blog' => 'Update Blog',
   'blog_list' => 'Blog List',
@@ -196,4 +196,24 @@ return [
   'english' => 'English',
   'french' => 'French',
   'spanish' => 'Spanish',
+
+  'users'          => 'Users',
+  'users_list'     => 'Users List',
+  'user'           => 'User',
+  'email'          => 'Email',
+  'created_at'     => 'Created At',
+  'actions'        => 'Actions',
+  'confirm_delete' => 'Are you sure you want to delete?',
+  'no_users'       => 'No users found',
+
+  'create_user'            => 'Create User',
+  'user_information'       => 'User Information',
+  'name'                   => 'Name',
+  'email'                  => 'Email',
+  'password'               => 'Password',
+  'password_confirmation'  => 'Confirm Password',
+  'save'                   => 'Save',
+  'back'                   => 'Back',
+  'add_user' => 'Add User',
+
 ];

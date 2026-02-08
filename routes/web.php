@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
@@ -7,11 +8,22 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Product;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/sitemap.xml', function () {
+
+    $products = Product::all();
+    $categories = Category::all();
+    $blogs = Blog::all();
+
+    return response()
+        ->view('sitemap', compact('products', 'categories', 'blogs'))
+        ->header('Content-Type', 'application/xml');
+});
 
 Route::get('locale/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'ar'])) {
@@ -36,6 +48,8 @@ Route::middleware('auth')->group(function () {
     Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('seo', \App\Http\Controllers\Admin\SeoMetaController::class);
     });
+
+    Route::resource('users', UserController::class);
 });
 
 // من نحن

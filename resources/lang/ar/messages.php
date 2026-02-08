@@ -12,7 +12,7 @@ return [
   // Blogs
   'blogs' => 'المدونات',
   'add_blog' => 'إضافة مدونة',
-  'add_new_blog' => 'إضافة مدونة جديدة',
+  'add_new_blog' => 'إضافة مدونة/ خبر جديدة',
   'edit_blog' => 'تعديل المدونة',
   'update_blog' => 'تحديث المدونة',
   'blog_list' => 'قائمة المدونات',
@@ -198,6 +198,25 @@ return [
   'english' => 'English',
   'french' => 'Français',
   'spanish' => 'Español',
+
+  'users'          => 'المستخدمين',
+  'users_list'     => 'قائمة المستخدمين',
+  'user'           => 'المستخدم',
+  'email'          => 'البريد الإلكتروني',
+  'created_at'     => 'تاريخ التسجيل',
+  'actions'        => 'التحكم',
+  'confirm_delete' => 'هل أنت متأكد من الحذف؟',
+  'no_users'       => 'لا يوجد مستخدمين',
+
+  'create_user'            => 'إنشاء مستخدم',
+  'user_information'       => 'بيانات المستخدم',
+  'name'                   => 'الاسم',
+  'email'                  => 'البريد الإلكتروني',
+  'password'               => 'كلمة المرور',
+  'password_confirmation'  => 'تأكيد كلمة المرور',
+  'save'                   => 'حفظ',
+  'back'                   => 'رجوع',
+  'add_user' => 'إضافة مستخدم',
 
 
 ];

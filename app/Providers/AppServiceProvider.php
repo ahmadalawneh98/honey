@@ -40,16 +40,11 @@ class AppServiceProvider extends ServiceProvider
 
             $event->menu->add(
                 [
-                    'type' => 'navbar-search',
-                    'text' => app()->getLocale() === 'ar' ? 'بحث' : 'Search',
-                    'topnav_right' => true,
-                ],
-                [
                     'type' => 'fullscreen-widget',
                     'topnav_right' => true,
                 ],
                 [
-                    'text' => app()->getLocale() === 'ar' ? 'المدونة' : 'Blog',
+                    'text' => app()->getLocale() === 'ar' ? 'المدونة والاخبار' : 'Blog And News',
                     'url' => '/blogs',
                     'icon' => 'fas fa-blog',
                 ],
@@ -68,7 +63,16 @@ class AppServiceProvider extends ServiceProvider
                     'route' => 'admin.seo.index',
                     'icon' => 'fas fa-search',
                 ],
-
+                [
+                    'text' => app()->getLocale() === 'ar' ? 'حسابي' : 'profile',
+                    'url' => '/profile',
+                    'icon' => 'fas fa-user',
+                ],
+                [
+                    'text' => app()->getLocale() === 'ar' ? 'المستخدمين' : 'Users',
+                    'url' => '/users',
+                    'icon' => 'fas fa-users',
+                ],
             );
         });
     }
