@@ -220,8 +220,15 @@
                                 <img src="{{ asset('images/blogs/' . $latest->image) }}" class="news-img me-3"
                                     alt="">
                                 <div>
-                                    <h3 class="mb-1 h6">{{ $latest->name_ar }}</h3>
-                                    <p class="text-muted small mb-0">{{ $latest->created_at->format('d M, Y') }}</p>
+                                    <h3 class="mb-1 h6" data-en="{!! $latest->name_en !!}"
+                                        data-ar="{!! $latest->name_ar !!}" data-es="{!! $latest->name_es !!}"
+                                        data-fr="{!! $latest->name_fr !!}"></h3>
+                                    <p class="text-muted small mb-0"
+                                        data-en="{{ $latest->created_at->locale('en')->translatedFormat('d F Y') }}"
+                                        data-ar="{{ $latest->created_at->locale('ar')->translatedFormat('d F Y') }}"
+                                        data-fr="{{ $latest->created_at->locale('fr')->translatedFormat('d F Y') }}"
+                                        data-es="{{ $latest->created_at->locale('es')->translatedFormat('d F Y') }}">
+                                    </p>
                                 </div>
                             </a>
                         @endforeach
