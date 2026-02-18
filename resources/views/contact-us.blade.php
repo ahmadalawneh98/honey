@@ -265,9 +265,15 @@
                             <div class="form-group">
                                 <input type="email" id="email" class="form-control"
                                     data-placeholder-en="Your Email" data-placeholder-ar="البريد الإلكتروني"
+                                    data-placeholder-es="Tu Correo Electrónico" data-placeholder-fr="Votre Email"
                                     data-required-en="Email is required" data-required-ar="البريد الإلكتروني مطلوب"
+                                    data-required-es="Se requiere correo electrónico"
+                                    data-required-fr="L'email est requis"
                                     data-regex="^[\w\.-]+@([\w-]+\.)+[\w-]{2,4}$" data-error-en="Invalid email format"
-                                    data-error-ar="صيغة البريد الإلكتروني غير صحيحة" placeholder="Your Email">
+                                    data-error-ar="صيغة البريد الإلكتروني غير صحيحة"
+                                    data-error-es="Formato de correo electrónico inválido"
+                                    data-error-fr="Format d'email invalide" placeholder="Your Email">
+
                                 <small class="error-msg"></small>
 
                             </div>
